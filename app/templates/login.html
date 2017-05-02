@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <div class="login-form "ng-app="MyApp">
+    <h2>Please Log in</h2>
+    {% include 'flash_messages.html' %}
+    <form ng-controller="loginCtrl">
+      {{ form.csrf_token }}
+      <div class="form-group">
+        {{ form.username.label }}
+        {{ form.username(class='form-control', placeholder="Enter Your Username") }}
+      </div>
+      <div class="form-group">
+        {{ form.password.label }}
+        {{ form.password(class='form-control', placeholder = "Enter Your Password") }}
+      </div>
+      <button type="submit" name="submit" class="btn btn-primary btn-block" ng-click="login()">Log in</button>
+    </form>
+  </div>
+{% endblock %}
+
+{% block js %} 
+<script src="/static/js/angular.js"></script>
+<script src="/static/js/app.js"></script>
+{% endblock%}

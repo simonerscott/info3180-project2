@@ -1,0 +1,19 @@
+body {
+    padding-top: 50px;
+}
+.thumbnail {
+	color: #797478;
+	font: 10px/1.5 Verdana, Helvetica, sans-serif;
+	float: left;
+}
+ 
+.thumbnail h3 {
+	text-transform: uppercase;
+}
+ 
+.thumbnail img {
+	max-width: 100%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}

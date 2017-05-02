@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<!-- AngularJS Code -->
+{% raw %}
+<h1 class="page-header">Thumbnails</h1>
+<div class="container" ng-app = "myApp" ng-controller = "thumbnailCtrl">
+    <div class="row">
+      <div class="col-xs-6 col-md-3"  ng-repeat="thumbnail in thumbnailsObj.thumbnails track by $index">
+        <a ng-href="{{ thumbnail }}" class="thumbnail">
+          <img ng-src="{{ thumbnail }}">
+        </a>
+      </div>
+    </div>
+</div>
+{% endraw %}
+
+<!-- App Module -->
+<script src="{{ url_for('static',filename='js/app.js') }}"></script>
+<!-- Thumbnail API Service -->
+<script src="{{ url_for('static',filename='js/thumbnails.js') }}"></script>
+
+{% endblock %}

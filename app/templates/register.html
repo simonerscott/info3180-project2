@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+
+{% include 'flash_messages.html' %}
+
+    <div class="login-form center-block" ng-app="MyApp" ng-controller="registerCtrl">
+        <div class="modal-content">
+            <form >
+                {{ form.csrf_token }}
+                
+                <div class="modal-body">
+                       {{ form.firstname.label }} <em> (Required) </em>
+                       <p class = "small"> Please Enter Your First Name. </p>
+                       {{ form.firstname (class='form-control', placeholder="Enter Your Name.")}}
+                </div> <br/>
+                
+                <div  class="modal-body">
+                        {{ form.lastname.label }} <em> (Required) </em>
+                        <p class = "small"> Please Enter Your Last Name. </p>
+                        {{ form.lastname  (class='form-control', placeholder="Enter Your Last Name.")}}
+                </div> <br/>
+                
+                
+                 <div  class="modal-body">
+                        {{ form.email.label }} <em> (Required) </em>
+                        <p class = "small"> Please Enter Your E-mail Address. </p>
+                        {{ form.email  (class='form-control', placeholder="Enter Your E-Mail.") }}
+                </div> <br/>
+                
+                
+                <div  class="modal-body">
+                        {{ form.username.label }} <em> (Required) </em>
+                        <p class = "small"> Please Enter Your Username. </p>
+                        {{ form.username  (class='form-control', placeholder="Enter Your Username.")}}
+                </div> <br/>
+                
+                
+                 <div  class="modal-body">
+                        {{ form.password.label }} <em> (Required) </em>
+                        <p class = "small"> Please Enter Your Password. </p>
+                        {{ form.password  (class='form-control', placeholder="Enter Your Password.") }}
+                </div> <br/>
+                
+                <div  class="modal-body">
+                        {{ form.confirmPassword.label }} <em> (Required) </em>
+                        <p class = "small"> Please Re-Enter Your Password. </p>
+                        {{ form.confirmPassword  (class='form-control', placeholder="Confirm Password.")}}
+                </div> <br/>
+                
+                <button type = "submit" ng-click="register()"  class="btn btn-primary btn-block"> Sumbit </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block js %} 
+<script src="/static/js/angular.js"></script>
+<script src="/static/js/app.js"></script>
+{% endblock%}

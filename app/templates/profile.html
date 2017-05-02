@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="/static/css/app.css"> 
+
+{% endblock %}
+
+
+
+{% block main %}
+<!-- AngularJS Code -->
+{% raw %}
+<div ng-app="myApp" ng-controller="registerCtrl" class = "card">
+        <header class = "header">
+            <h2> Profile </h2>
+            {{ profile }}
+            {{ wish }}
+        </header>
+</div>
+{% endraw %}
+
+
+<!-- App Module -->
+<script src="{{ url_for('static',filename='js/app.js') }}"></script>
+<!-- Thumbnail API Service -->
+<script src="{{ url_for('static',filename='js/thumbnails.js') }}"></script>
+{% endblock %}
